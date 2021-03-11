@@ -68,8 +68,7 @@ Get all planets, paginated and ordered by the planet's name.
 * **Success Response:**
 
     * **Code:** 200 <br />
-      **
-      Content:** `{ items : [{id: <string>, name: <string>, climate: <string>, terrain: <string>, movieAppearances: <integer>},...], total : 100 }`
+      **Content:** `{ items : [{id: <string>, name: <string>, climate: <string>, terrain: <string>, movieAppearances: <integer>},...], total : 100 }`
 
 * **Error Response:**
 
