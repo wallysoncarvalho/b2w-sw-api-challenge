@@ -1,0 +1,13 @@
+server:
+  port: 8095
+
+spring:
+  data:
+    mongodb:
+      host: ${MONGO_HOST:localhost}
+      port: 27017
+      database: b2w-challenge
+      auto-index-creation: true
+
+
+# docker run -d --name mongo -p 27017:27017 -p 28017:28017 -v /home/mongo-data:/data/db mongo:4.4

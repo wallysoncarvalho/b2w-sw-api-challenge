@@ -1,0 +1,31 @@
+version: "3.6"
+services:
+  api:
+    build: ./
+    image: swc-api-wallyson:1.0
+    container_name: swc-api-wallyson
+    restart: unless-stopped
+    environment:
+      - MONGO_HOST=swc-db-wallyson
+    ports:
+      - "8095:8095"
+    depends_on:
+      - db
+    networks:
+      - backend
+
+  db:
+    image: mongo:4.4
+    restart: unless-stopped
+    container_name: swc-db-wallyson
+    ports:
+      - "28017:28017"
+      - "27017:27017"
+    volumes:
+      - backend
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
