@@ -1,9 +1,9 @@
 FROM adoptopenjdk/maven-openjdk11 as builder
 WORKDIR /application
 ARG JAR_FILE=target/*.jar
-COPY src ./src
-COPY pom.xml ./
-RUN echo "DOWNLOADING DEPS. THIS MAY TAKE A FEW MINUTES." && mvn -q clean package -DskipTests
+# COPY src ./src
+# COPY pom.xml ./
+# RUN mvn clean package -DskipTests=true
 COPY ${JAR_FILE} application.jar
 RUN java -Djarmode=layertools -jar application.jar extract
 

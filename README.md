@@ -33,15 +33,13 @@ tests: https://github.com/wallysoncarvalho/b2w-sw-api-challenge/actions
 The preferred way to run this application is by using `docker-compose` because it already sets up everything
 automatically.
 
-If **docker and docker-compose** is available, one can simply run `docker-compose up -d` at the root of the project. The
-image of the API will be built by the `Dockerfile`, note that it also uses a multi-stage build, where the first stage is
-to generate the fat jar of the application and create a small image using the `layered jars` technique provided by
-spring boot.
+To run the application you'll need Java 11 to package the application in a `.jar` file. The maven wrappers can be used
+to package the application by running `./mvnw clean package -DskipTests=true`. A `.jar` file should be created inside
+the new folder `target/`.
 
-Also, keep in mind that this stage will need to download the dependencies to create the jar, so it may take a few
-minutes. If you want to prevent this, you can build the jar with `mvn package -DskipTests=true` and comment the lines 4,
-5 and 6 of the `Dockerfile`. For this you'll need Java 11 (with JAVA_HOME set) and can use the maven wrappers provided
-on the project root (`mvnw` and `mvnw.cmd`).
+After it, if **docker and docker-compose** is available, you can simply run `docker-compose up -d` at the root of the
+project. The image of the API will be built by the `Dockerfile`, note that it also uses a multi-stage build, where the
+first stage is to copy the artifact and create a small image using the `layered jars` technique provided by spring boot.
 
 ## REST API
 
