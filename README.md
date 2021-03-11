@@ -23,6 +23,9 @@ As we do not have many business rules on this problem I opted to use the integra
 help of `spring-boot-test` to set up the environment and provide Junit 5 (among others). Also, on the persistence side,
 I use `flapdoodle` as the test database.
 
+I also configured a simple pipeline on github action to build and run the
+tests: https://github.com/wallysoncarvalho/b2w-sw-api-challenge/actions
+
 ## Run
 
 ### Docker
@@ -68,7 +71,8 @@ Get all planets, paginated and ordered by the planet's name.
 * **Success Response:**
 
     * **Code:** 200 <br />
-      **Content:** `{ items : [{id: <string>, name: <string>, climate: <string>, terrain: <string>, movieAppearances: <integer>},...], total : 100 }`
+      **
+      Content:** `{ items : [{id: <string>, name: <string>, climate: <string>, terrain: <string>, movieAppearances: <integer>},...], total : 100 }`
 
 * **Error Response:**
 
