@@ -10,7 +10,7 @@
     </parent>
     <groupId>info.wallyson</groupId>
     <artifactId>swc</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0</version>
     <name>swc</name>
     <description>Star wars challenge for backend developer on B2W.</description>
     <properties>

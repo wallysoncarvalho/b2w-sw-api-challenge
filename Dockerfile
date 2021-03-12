@@ -1,11 +1,9 @@
 FROM adoptopenjdk/maven-openjdk11 as builder
 WORKDIR /application
-ARG JAR_FILE=target/*.jar
-# COPY src ./src
-# COPY pom.xml ./
-# RUN mvn clean package -DskipTests=true
-COPY ${JAR_FILE} application.jar
-RUN java -Djarmode=layertools -jar application.jar extract
+COPY src ./src
+COPY pom.xml ./
+RUN mvn clean package -DskipTests=true
+RUN java -Djarmode=layertools -jar target/swc-1.0.jar extract
 
 FROM adoptopenjdk:11-jre-hotspot
 WORKDIR /application
