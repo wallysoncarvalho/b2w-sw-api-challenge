@@ -41,6 +41,10 @@ After it, if **docker and docker-compose** is available, you can simply run `doc
 project. The image of the API will be built by the `Dockerfile`, note that it also uses a multi-stage build, where the
 first stage is to copy the artifact and create a small image using the `layered jars` technique provided by spring boot.
 
+Full command (needs Java 11 installed and JAVA_HOME set):
+
+`./mvnw clean package -DskipTests=true && docker-compose up -d`
+
 ## REST API
 
 A POSTMAN collection named `B2W-BACKEND-CHEALLENGE.postman_collection.json` is provided at the root of this project, so
